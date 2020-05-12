@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav container">
     <div class="nav-left">
       <img src="../assets/logo.png" alt />
       <span>广电系统线上采购一体化平台</span>
@@ -8,8 +8,8 @@
       <nav class="nav-right">
         <li v-for="(item, index) in navList" :key="index" @click="navClick(index)">{{item.name}}</li>
       </nav>
-      <el-button icon="el-icon-search" class="button" type="text" @click="searchShow">
-        <input type="text" class="search" />
+      <el-button icon="el-icon-search" class="" type="text" @click="searchShow">
+        <input type="text" class="search" @blur="removeShow" />
       </el-button>
     </div>
   </div>
@@ -32,14 +32,21 @@ export default {
       });
     },
     searchShow() {
-      let navBox = document.querySelector(".nav-right");
       let search = document.querySelector(".search");
-      let button = document.querySelector(".button");
+      let button = document.querySelector(".el-button");
       let searchBtn = document.querySelector(".el-icon-search");
-      navBox.style.display = "none";
       button.classList.add("button");
       searchBtn.classList.add("search-btn");
       search.classList.add("search-in");
+      search.focus();
+    },
+    removeShow() {
+      let search = document.querySelector(".search");
+      let button = document.querySelector(".el-button");
+      let searchBtn = document.querySelector(".el-icon-search");
+      button.classList.remove("button");
+      searchBtn.classList.remove("search-btn");
+      search.classList.remove("search-in");
     }
   },
   mounted() {
@@ -58,6 +65,7 @@ export default {
   line-height: 90px;
   .nav-left {
     display: flex;
+    flex: 1;
     flex-direction: row;
     align-items: center;
     img {
@@ -70,8 +78,10 @@ export default {
     }
   }
   .right {
+    flex: 1;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
   }
   .nav-right {
     display: flex;
@@ -88,10 +98,11 @@ export default {
     }
   }
   .el-button {
-    width: auto;
+    width: 70px;
   }
   .el-icon-search {
     padding: 0 20px;
+    height: 100%;
     font-size: 25px;
     color: #000;
   }
@@ -103,7 +114,6 @@ export default {
     float: right;
     border-radius: 20px;
     width: 0px;
-    transition: width 0s;
     padding: 0;
     border: 0px solid rgb(242, 242, 242);
     outline: none;
