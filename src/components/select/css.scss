@@ -1,0 +1,87 @@
+.z-select {
+    display      : inline-block;
+    min-width    : 100px;
+    border       : 1px solid #ccc;
+    border-radius: 5px;
+    height       : 28px;
+    line-height  : 28px;
+    position     : relative;
+    cursor       : pointer;
+
+    .z-select-inner {
+        display    : inline-block;
+        padding    : 0 25px 0 8px;
+        font-size  : 14px;
+        height     : 28px;
+        line-height: 28px;
+    }
+
+    input {
+        border: none;
+    }
+
+    .z-select-dropdown {
+        position  : absolute;
+        max-height: 200px;
+        margin-top: 3px;
+        transition: all .5s;
+        overflow  : auto;
+        z-index   : 900;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+        box-sizing: border-box;
+
+        .z-select-list {
+            min-width       : 100px;
+            background-color: #fff;
+            border-radius   : 5px;
+            padding         : 5px 0;
+
+            .z-select-item {
+                padding   : 5px 16px;
+                transition: all .5s;
+
+                &:hover {
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+
+    .dropdown-top {
+        top: 20px;
+    }
+
+    .dropdown-dowm {
+        bottom: 20px;
+    }
+}
+
+.z-select-item-selected {
+    color           : $color-blue;
+    background-color: #eee;
+}
+
+.z-arrow-down {
+    color     : #ccc;
+    font-size : 14px;
+    position  : absolute;
+    top       : 50%;
+    right     : 10px;
+    transform : translateY(-50%) rotate(90deg);
+    color     : #000;
+    transition: all .5s ease-in-out;
+}
+
+.z-arrow-down-rotate {
+    transform: translateY(-50%) rotate(270deg) !important;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

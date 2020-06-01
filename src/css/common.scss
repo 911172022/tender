@@ -1,3 +1,122 @@
+$color-blue   : #409EFF;
+$color-success: #67C23A;
+$color-warning: #E6A23C;
+$color-error  : #F56C6C;
+$color-info   : #909399;
+
+html {
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td {
+    font-weight: 400;
+    margin     : 0;
+    padding    : 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h5 {
+    margin : 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFFFFF;
+    color           : #666666;
+    font-family     : Helvetica, Arial, sans-serif;
+    font-size       : 12px;
+    text-align      : left;
+}
+
+select {
+    font-size: 12px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+fieldset,
+img {
+    border: 0 none;
+}
+
+fieldset {
+    margin : 0;
+    padding: 0;
+}
+
+fieldset p {
+    margin : 0;
+    padding: 0 0 0 8px;
+}
+
+legend {
+    display: none;
+}
+
+address,
+caption,
+em,
+strong,
+th,
+i {
+    font-style : normal;
+    font-weight: 400;
+}
+
+table caption {
+    margin-left: -1px;
+}
+
+hr {
+    border-bottom: 1px solid #FFFFFF;
+    border-top   : 1px solid #E4E4E4;
+    border-width : 1px 0;
+    clear        : both;
+    height       : 2px;
+    margin       : 5px 0;
+    overflow     : hidden;
+}
+
+ol,
+ul {
+    list-style-image   : none;
+    list-style-position: outside;
+    list-style-type    : none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+    content: ””;
+}
+
 .container {
     width : 1200px;
     margin: 0 auto;
@@ -9,4 +128,78 @@ li {
 
 img {
     vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input,
+textarea,
+button,
+select {
+    outline: none;
+}
+
+.border-hover {
+    transition: border 0.5s;
+
+    &:hover {
+        border: 1px solid #409eff;
+    }
+
+    &:focus {
+        border: 1px solid #409eff;
+    }
+}
+
+.border-click {
+    border: 1px solid #409eff !important;
+}
+
+.z-point {
+    cursor: pointer;
+}
+
+.z-disabled {
+    cursor: not-allowed;
+}
+
+.z-input {
+    width        : 100%;
+    min-height   : 30px;
+    line-height  : 30px;
+    border       : 1px solid #ccc;
+    border-radius: 5px;
+    padding      : 5px 15px;
+}
+
+.z-textarea {
+    resize: vertical;
+}
+
+/*修改滚动条样式*/
+div::-webkit-scrollbar {
+    width : 8px;
+    height: 8px;
+}
+
+div::-webkit-scrollbar-track {
+    display      : none;
+    background   : rgb(239, 239, 239);
+    border-radius: 2px;
+}
+
+div::-webkit-scrollbar-thumb {
+    background   : #bfbfbf;
+    border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
 }
